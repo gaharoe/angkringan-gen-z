@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Angkringan</title>
+  <script src="./libs/tailwind.js"></script>
+</head>
+<body class="bg-gradient-to-b from-stone-900 to-stone-800 min-h-screen font-sans text-stone-100 relative">
+
+  <!-- Header -->
+  <header class="bg-stone-900 text-amber-400 text-center py-5 shadow-md sticky top-0 z-20 border-b border-stone-700">
+    <h1 class="text-2xl font-bold">🍢 Angkringan Malam</h1>
+    <p class="text-sm text-stone-300">Hemat - Nikmat - Merakyat</p>
+  </header>
+
+  <!-- Search + Kategori -->
+  <div class="px-5 py-4 sticky top-[72px] bg-stone-800 z-10 border-b border-stone-700">
+    <input id="search" type="text" placeholder="Cari menu..." 
+           class="w-full p-3 rounded-xl border border-stone-600 bg-stone-900 text-stone-100 placeholder-stone-400 focus:ring-2 focus:ring-amber-500 outline-none mb-4">
+    
+    <!-- Kategori -->
+    <div class="flex gap-2 overflow-x-auto text-sm font-medium">
+      <button onclick="filterCategory('all')" class="px-4 py-2 rounded-full bg-amber-500 text-stone-900">Semua</button>
+      <button onclick="filterCategory('makanan')" class="px-4 py-2 rounded-full bg-stone-700 hover:bg-stone-600">Makanan</button>
+      <button onclick="filterCategory('minuman')" class="px-4 py-2 rounded-full bg-stone-700 hover:bg-stone-600">Minuman</button>
+      <button onclick="filterCategory('camilan')" class="px-4 py-2 rounded-full bg-stone-700 hover:bg-stone-600">Camilan</button>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <section class="px-5 pb-24">
+    <h3 class="text-lg font-bold text-amber-400 mb-4">🍽 Menu Angkringan</h3>
+
+    <div id="menu-list" class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Template Menu Card -->
+       <p>menu kosong</p>
+    </div>
+  </section>
+
+  <!-- Floating Cart Button -->
+  <button id="cart-btn" 
+          class="hidden fixed bottom-20 right-5 bg-amber-500 text-stone-900 px-4 py-3 rounded-full shadow-lg flex items-center space-x-2 z-30 font-semibold">
+    <span>🛒 <span id="cart-count">0</span></span>
+    <span>Pesan</span>
+  </button>
+  <script src="./libs/socket.io.min.js"></script>
+  <script>
+    const menus = [
+      { name: "Nasi Kucing", desc: "Nasi mini dengan lauk tempe & sambal", price: 5000, img: "https://source.unsplash.com/300x200/?rice", category: "makanan" },
+      { name: "Sate Usus", desc: "Camilan gurih khas angkringan", price: 2000, img: "https://source.unsplash.com/300x200/?satay", category: "camilan" },
+      { name: "Wedang Jahe", desc: "Minuman hangat pengusir dingin", price: 4000, img: "https://source.unsplash.com/300x200/?tea", category: "minuman" },
+      { name: "Tempe Mendoan", desc: "Tempe goreng tipis khas Banyumas", price: 3000, img: "https://source.unsplash.com/300x200/?tempe", category: "camilan" },
+      { name: "Kopi Hitam", desc: "Kopi tubruk hangat menemani malam", price: 4000, img: "https://source.unsplash.com/300x200/?coffee", category: "minuman" },
+      { name: "Nasi Bandeng", desc: "Nasi kucing isi ikan bandeng", price: 6000, img: "https://source.unsplash.com/300x200/?fish,rice", category: "makanan" }
+    ];
+
+    const menuList = document.getElementById("menu-list");
+    const search = document.getElementById("search");
+    const cartBtn = document.getElementById("cart-btn");
+    const cartCount = document.getElementById("cart-count");
+    let cart = [];
+    let currentCategory = "all";
+
+    function renderMenu(items) {
+      menuList.innerHTML = "";
+      items.forEach((item, index) => {
+        menuList.innerHTML += `
+          <div class="bg-stone-900 rounded-xl border border-stone-700 shadow p-3 flex flex-col">
+            <img src="${item.img}" alt="${item.name}" class="rounded-lg mb-2 w-full h-28 object-cover">
+            <h4 class="text-base font-semibold text-amber-400">${item.name}</h4>
+            <p class="text-xs text-stone-400">${item.desc}</p>
+            <p class="text-amber-500 font-bold mt-1 text-sm">Rp ${item.price.toLocaleString()}</p>
+            <button onclick="addToCart(${index})" 
+              class="mt-2 bg-amber-500 text-stone-900 px-2 py-1 rounded-md text-sm hover:bg-amber-400 transition">
+              + Tambah
+            </button>
+          </div>
+        `;
+      });
+    }
+
+    function addToCart(index) {
+      cart.push(menus[index]);
+      cartCount.textContent = cart.length;
+      cartBtn.classList.remove("hidden");
+    }
+
+    // Search filter
+    search.addEventListener("input", (e) => {
+      const keyword = e.target.value.toLowerCase();
+      const filtered = menus.filter(m => 
+        (m.name.toLowerCase().includes(keyword) || m.desc.toLowerCase().includes(keyword)) &&
+        (currentCategory === "all" || m.category === currentCategory)
+      );
+      renderMenu(filtered);
+    });
+
+    // Category filter
+    function filterCategory(cat) {
+      currentCategory = cat;
+      const keyword = search.value.toLowerCase();
+      const filtered = menus.filter(m => 
+        (currentCategory === "all" || m.category === currentCategory) &&
+        (m.name.toLowerCase().includes(keyword) || m.desc.toLowerCase().includes(keyword))
+      );
+      renderMenu(filtered);
+
+      // highlight active button
+      document.querySelectorAll("button").forEach(btn => {
+        if(btn.innerText.toLowerCase().includes(cat) || (cat==="all" && btn.innerText==="Semua")){
+          btn.classList.add("bg-amber-500","text-stone-900");
+          btn.classList.remove("bg-stone-700","text-stone-100");
+        } else if (btn.innerText !== "Pesan") {
+          btn.classList.remove("bg-amber-500","text-stone-900");
+          btn.classList.add("bg-stone-700","text-stone-100");
+        }
+      });
+    }
+
+    // Cart button action
+    cartBtn.addEventListener("click", () => {
+      let total = cart.reduce((sum, item) => sum + item.price, 0);
+      alert(`Kamu memesan ${cart.length} item.\nTotal: Rp ${total.toLocaleString()}\n\nTerima kasih sudah pesan di Angkringan Malam!`);
+    });
+
+    renderMenu(menus);
+  </script>
+</body>
+</html>
