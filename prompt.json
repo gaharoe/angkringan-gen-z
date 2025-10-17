@@ -1,0 +1,16 @@
+{
+    "prompt" : "berdasarkan rules, buatkan sistematika penulisan",   
+    "rules" : {
+        "bab_2" : [
+            "tabel studi jurnal",
+            "menjelaskan soal judulnya",
+            "usecase, activ, class, app pendukung",
+            "gambar"
+        ],
+        "bab_3" : [
+            "analisan dan perancangan",
+            "narasi usecase, dibuat table",
+            "perancangan antarmuka"
+        ]
+    }
+}
