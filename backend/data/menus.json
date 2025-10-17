@@ -1,0 +1,128 @@
+[
+    {
+        "name": "Bakwan",
+        "price": 1500,
+        "image": "http://192.168.1.9/assets/gorengan/bakwan.jpg",
+        "category": "gorengan",
+        "id": 0
+    },
+    {
+        "name": "Tahu Isi",
+        "price": 1500,
+        "image": "http://192.168.1.9/assets/gorengan/tahu_isi.jpg",
+        "category": "gorengan",
+        "id": 1
+    },
+    {
+        "name": "Tempe Goreng",
+        "price": 1500,
+        "image": "http://192.168.1.9/assets/gorengan/tempe_goreng.jpg",
+        "category": "gorengan",
+        "id": 2
+    },
+    {
+        "name": "Tempe Mendoan",
+        "price": 2000,
+        "image": "http://192.168.1.9/assets/gorengan/tempe_mendoan.jpg",
+        "category": "gorengan",
+        "id": 3
+    },
+    {
+        "name": "Kopi Hitam",
+        "price": 5000,
+        "image": "http://192.168.1.9/assets/minuman/kopi_hitam.jpg",
+        "category": "minuman",
+        "id": 4
+    },
+    {
+        "name": "Kopi Susu",
+        "price": 5000,
+        "image": "http://192.168.1.9/assets/minuman/kopi_susu.jpg",
+        "category": "minuman",
+        "id": 5
+    },
+    {
+        "name": "Susu Jahe",
+        "price": 5000,
+        "image": "http://192.168.1.9/assets/minuman/susu_jahe.jpg",
+        "category": "minuman",
+        "id": 6
+    },
+    {
+        "name": "Teh Manis",
+        "price": 3000,
+        "image": "http://192.168.1.9/assets/minuman/teh_manis.jpg",
+        "category": "minuman",
+        "id": 7
+    },
+    {
+        "name": "Wedang Jahe",
+        "price": 5000,
+        "image": "http://192.168.1.9/assets/minuman/wedang_jahe.jpg",
+        "category": "minuman",
+        "id": 8
+    },
+    {
+        "name": "Nasi Bakar",
+        "price": 8000,
+        "image": "http://192.168.1.9/assets/nasi/nasi_bakar.jpg",
+        "category": "nasi",
+        "id": 9
+    },
+    {
+        "name": "Nasi Kucing",
+        "price": 8000,
+        "image": "http://192.168.1.9/assets/nasi/nasi_kucing.jpg",
+        "category": "nasi",
+        "id": 10
+    },
+    {
+        "name": "Sambal Ijo",
+        "price": 0,
+        "image": "http://192.168.1.9/assets/sambal/sambal_ijo.jpg",
+        "category": "sambal",
+        "id": 11
+    },
+    {
+        "name": "Sambal Matah",
+        "price": 0,
+        "image": "http://192.168.1.9/assets/sambal/sambal_matah.jpg",
+        "category": "sambal",
+        "id": 12
+    },
+    {
+        "name": "Sambal Merah",
+        "price": 0,
+        "image": "http://192.168.1.9/assets/sambal/sambal_merah.jpg",
+        "category": "sambal",
+        "id": 13
+    },
+    {
+        "name": "Sambal Terasi",
+        "price": 0,
+        "image": "http://192.168.1.9/assets/sambal/sambal_terasi.jpg",
+        "category": "sambal",
+        "id": 14
+    },
+    {
+        "name": "Sate Ati Ampela",
+        "price": 3000,
+        "image": "http://192.168.1.9/assets/sate_satean/sate_ati_ampela.jpg",
+        "category": "sate satean",
+        "id": 15
+    },
+    {
+        "name": "Sate Telur Puyuh",
+        "price": 3000,
+        "image": "http://192.168.1.9/assets/sate_satean/sate_telur_puyuh.jpg",
+        "category": "sate satean",
+        "id": 16
+    },
+    {
+        "name": "Sate Usus",
+        "price": 3000,
+        "image": "http://192.168.1.9/assets/sate_satean/sate_usus.jpg",
+        "category": "sate satean",
+        "id": 17
+    }
+]
