@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angkringan Coffee - Street Vibes, Premium Brews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="libs/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'cream': '#FDFAF6',
+                        'brick': '#CD5C5C',
+                        'mustard': '#DAA520',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-orange-500">Angkringan</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#menu" class="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition">Menu</a>
+                        <a href="#about" class="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="hamburger" class="hamburger text-gray-700 hover:text-orange-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium transition">Home</a>
+                <a href="#menu" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium transition">Menu</a>
+                <a href="#about" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium transition">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 relative">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=600&fit=crop" alt="Aesthetic coffee and snacks at angkringan" class="w-full h-full md:h-[500px] object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center text-white px-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Savor the Streets</h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Authentic angkringan vibes with premium brews and bites</p>
+                <a href="#menu" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Menu</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 h-80 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=240&fit=crop" alt="Kopi Joss" class="w-full h-48 object-cover">
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Kopi Joss</h3>
+                        <p class="text-orange-500 font-medium text-lg">$2.00</p>
+                        <div class="mt-4">
+                            <button class="add-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-all duration-300 ease-in-out">Add</button>
+                            <div class="qty-control hidden flex items-center justify-center space-x-2 mt-2">
+                                <button class="btn-minus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">-</button>
+                                <input type="number" class="qty-input w-12 text-center border-0 bg-transparent font-semibold" value="0" readonly>
+                                <button class="btn-plus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 h-80 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=240&fit=crop" alt="Sate Ayam" class="w-full h-48 object-cover">
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Sate Ayam</h3>
+                        <p class="text-orange-500 font-medium text-lg">$1.50</p>
+                        <div class="mt-4">
+                            <button class="add-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-all duration-300 ease-in-out">Add</button>
+                            <div class="qty-control hidden flex items-center justify-center space-x-2 mt-2">
+                                <button class="btn-minus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">-</button>
+                                <input type="number" class="qty-input w-12 text-center border-0 bg-transparent font-semibold" value="0" readonly>
+                                <button class="btn-plus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 h-80 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1574651351432-98304e8d8e86?w=300&h=240&fit=crop" alt="Tempe Goreng" class="w-full h-48 object-cover">
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Tempe Goreng</h3>
+                        <p class="text-orange-500 font-medium text-lg">$1.00</p>
+                        <div class="mt-4">
+                            <button class="add-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-all duration-300 ease-in-out">Add</button>
+                            <div class="qty-control hidden flex items-center justify-center space-x-2 mt-2">
+                                <button class="btn-minus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">-</button>
+                                <input type="number" class="qty-input w-12 text-center border-0 bg-transparent font-semibold" value="0" readonly>
+                                <button class="btn-plus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 h-80 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1512568400610-3f3f73e82d0e?w=300&h=240&fit=crop" alt="Es Teh" class="w-full h-48 object-cover">
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Es Teh</h3>
+                        <p class="text-orange-500 font-medium text-lg">$1.20</p>
+                        <div class="mt-4">
+                            <button class="add-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-all duration-300 ease-in-out">Add</button>
+                            <div class="qty-control hidden flex items-center justify-center space-x-2 mt-2">
+                                <button class="btn-minus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">-</button>
+                                <input type="number" class="qty-input w-12 text-center border-0 bg-transparent font-semibold" value="0" readonly>
+                                <button class="btn-plus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 5 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 h-80 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b74?w=300&h=240&fit=crop" alt="Nasi Kucing" class="w-full h-48 object-cover">
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Nasi Kucing</h3>
+                        <p class="text-orange-500 font-medium text-lg">$2.50</p>
+                        <div class="mt-4">
+                            <button class="add-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-all duration-300 ease-in-out">Add</button>
+                            <div class="qty-control hidden flex items-center justify-center space-x-2 mt-2">
+                                <button class="btn-minus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">-</button>
+                                <input type="number" class="qty-input w-12 text-center border-0 bg-transparent font-semibold" value="0" readonly>
+                                <button class="btn-plus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 6 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 h-80 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1574651351432-98304e8d8e86?w=300&h=240&fit=crop" alt="Tahu Isi" class="w-full h-48 object-cover">
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Tahu Isi</h3>
+                        <p class="text-orange-500 font-medium text-lg">$0.80</p>
+                        <div class="mt-4">
+                            <button class="add-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-all duration-300 ease-in-out">Add</button>
+                            <div class="qty-control hidden flex items-center justify-center space-x-2 mt-2">
+                                <button class="btn-minus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">-</button>
+                                <input type="number" class="qty-input w-12 text-center border-0 bg-transparent font-semibold" value="0" readonly>
+                                <button class="btn-plus bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded transition-all duration-200">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed for demo -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">What Our Customers Say</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <p class="text-gray-600 italic mb-4">"Best kopi joss in town! The vibe is so Instagrammable."</p>
+                    <p class="font-semibold text-orange-500">- Alex T.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <p class="text-gray-600 italic mb-4">"Love the sate and friendly service. Must-try for urban explorers."</p>
+                    <p class="font-semibold text-orange-500">- Jamie L.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <p class="text-gray-600 italic mb-4">"Affordable, delicious, and authentic. Perfect evening spot."</p>
+                    <p class="font-semibold text-orange-500">- Sam R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">About Angkringan</h2>
+                <p class="text-gray-600 leading-relaxed text-lg">Experience the heart of street culture with our modern twist on traditional angkringan. Sourcing fresh ingredients daily, we bring warm, comforting flavors to young urbanites seeking quick, premium bites and brews. Join us for an evening of good food and great vibes.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=400&fit=crop" alt="Angkringan stall ambiance" class="w-full h-64 object-cover rounded-xl shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Ready to Savor?</h2>
+            <p class="text-gray-600 mb-8 text-lg">Order online for delivery or swing by our stall.</p>
+            <a href="https://wa.me/1234567890?text=Hi%20Angkringan%2C%20I'd%20like%20to%20order!" class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-lg text-xl font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg">Order via WhatsApp</a>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="text-sm">
+                <p>Opening Hours: 5:00 PM - 12:00 AM Daily</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://instagram.com/angkringancoffee" class="hover:text-orange-500 transition text-sm font-medium">Instagram</a>
+                <a href="https://tiktok.com/@angkringancoffee" class="hover:text-orange-500 transition text-sm font-medium">TikTok</a>
+                <a href="https://wa.me/1234567890" class="hover:text-orange-500 transition text-sm font-medium">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let menus = [];
+        fetch("http://192.168.1.102/api/menus").then(req => req.json()).then(data => menus = data);
+        
+        function $id(id) {return document.getElementById(id)}
+
+        function renderMenu(data) {
+            $id("menu-list")
+        }
+
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Product quantity controls
+        document.querySelectorAll('.add-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.product-card');
+                const addBtn = card.querySelector('.add-btn');
+                const qtyControl = card.querySelector('.qty-control');
+                const qtyInput = card.querySelector('.qty-input');
+                
+                addBtn.classList.add('hidden');
+                qtyControl.classList.remove('hidden');
+                qtyInput.value = 1;
+            });
+        });
+
+        document.querySelectorAll('.btn-plus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const qtyInput = this.parentElement.querySelector('.qty-input');
+                qtyInput.value = parseInt(qtyInput.value) + 1;
+            });
+        });
+
+        document.querySelectorAll('.btn-minus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const qtyInput = this.parentElement.querySelector('.qty-input');
+                const currentQty = parseInt(qtyInput.value);
+                
+                if (currentQty > 1) {
+                    qtyInput.value = currentQty - 1;
+                } else {
+                    const card = this.closest('.product-card');
+                    const addBtn = card.querySelector('.add-btn');
+                    const qtyControl = card.querySelector('.qty-control');
+                    
+                    addBtn.classList.remove('hidden');
+                    qtyControl.classList.add('hidden');
+                    qtyInput.value = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
