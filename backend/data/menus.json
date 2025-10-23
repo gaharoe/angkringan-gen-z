@@ -2,126 +2,126 @@
     {
         "name": "Bakwan",
         "price": 1500,
-        "image": "http://192.168.1.9/assets/gorengan/bakwan.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762663/bakwan_uqoplp.jpg",
         "category": "gorengan",
         "id": 0
     },
     {
         "name": "Tahu Isi",
         "price": 1500,
-        "image": "http://192.168.1.9/assets/gorengan/tahu_isi.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762661/tahu_isi_lfg0co.jpg",
         "category": "gorengan",
         "id": 1
     },
     {
         "name": "Tempe Goreng",
         "price": 1500,
-        "image": "http://192.168.1.9/assets/gorengan/tempe_goreng.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762661/tempe_goreng_ongc5t.jpg",
         "category": "gorengan",
         "id": 2
     },
     {
         "name": "Tempe Mendoan",
         "price": 2000,
-        "image": "http://192.168.1.9/assets/gorengan/tempe_mendoan.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762669/tempe_mendoan_uvnoz0.png",
         "category": "gorengan",
         "id": 3
     },
     {
         "name": "Kopi Hitam",
         "price": 5000,
-        "image": "http://192.168.1.9/assets/minuman/kopi_hitam.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762646/kopi_hitam_z84rgx.jpg",
         "category": "minuman",
         "id": 4
     },
     {
         "name": "Kopi Susu",
         "price": 5000,
-        "image": "http://192.168.1.9/assets/minuman/kopi_susu.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762645/kopi_susu_kan0zo.webp",
         "category": "minuman",
         "id": 5
     },
     {
         "name": "Susu Jahe",
         "price": 5000,
-        "image": "http://192.168.1.9/assets/minuman/susu_jahe.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762645/susu_jahe_effkx6.jpg",
         "category": "minuman",
         "id": 6
     },
     {
         "name": "Teh Manis",
         "price": 3000,
-        "image": "http://192.168.1.9/assets/minuman/teh_manis.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762650/teh_manis_ukl6aw.jpg",
         "category": "minuman",
         "id": 7
     },
     {
         "name": "Wedang Jahe",
         "price": 5000,
-        "image": "http://192.168.1.9/assets/minuman/wedang_jahe.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762645/wedang_jahe_aetddp.jpg",
         "category": "minuman",
         "id": 8
     },
     {
         "name": "Nasi Bakar",
         "price": 8000,
-        "image": "http://192.168.1.9/assets/nasi/nasi_bakar.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762667/nasi_bakar_nncz93.jpg",
         "category": "nasi",
         "id": 9
     },
     {
         "name": "Nasi Kucing",
         "price": 8000,
-        "image": "http://192.168.1.9/assets/nasi/nasi_kucing.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762661/nasi_kucing_t5hp54.jpg",
         "category": "nasi",
         "id": 10
     },
     {
         "name": "Sambal Ijo",
         "price": 0,
-        "image": "http://192.168.1.9/assets/sambal/sambal_ijo.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762674/sambal_ijo_hgkb1i.png",
         "category": "sambal",
         "id": 11
     },
     {
         "name": "Sambal Matah",
         "price": 0,
-        "image": "http://192.168.1.9/assets/sambal/sambal_matah.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762664/sambal_matah_lwowqi.jpg",
         "category": "sambal",
         "id": 12
     },
     {
         "name": "Sambal Merah",
         "price": 0,
-        "image": "http://192.168.1.9/assets/sambal/sambal_merah.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762662/sambal_merah_vle9ir.webp",
         "category": "sambal",
         "id": 13
     },
     {
         "name": "Sambal Terasi",
         "price": 0,
-        "image": "http://192.168.1.9/assets/sambal/sambal_terasi.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762680/sambal_terasi_drwwqk.png",
         "category": "sambal",
         "id": 14
     },
     {
         "name": "Sate Ati Ampela",
         "price": 3000,
-        "image": "http://192.168.1.9/assets/sate_satean/sate_ati_ampela.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762665/sate_ati_ampela_x3sx4x.png",
         "category": "sate satean",
         "id": 15
     },
     {
         "name": "Sate Telur Puyuh",
         "price": 3000,
-        "image": "http://192.168.1.9/assets/sate_satean/sate_telur_puyuh.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762665/sate_telur_puyuh_a2a0jw.jpg",
         "category": "sate satean",
         "id": 16
     },
     {
         "name": "Sate Usus",
         "price": 3000,
-        "image": "http://192.168.1.9/assets/sate_satean/sate_usus.jpg",
+        "image": "https://res.cloudinary.com/dbkaiykhi/image/upload/v1760762667/sate_usus_jrokyl.webp",
         "category": "sate satean",
         "id": 17
     }

@@ -1,8 +1,0 @@
-[
-    { "name": "Nasi Kucing", "desc": "Nasi mini dengan lauk tempe & sambal", "price": 5000, "img": "http://localhost/nasi_kucing.jpg", "category": "makanan" },
-    { "name": "Sate Usus", "desc": "Camilan gurih khas angkringan", "price": 2000, "img": "http://localhost/sate_usus.jpg", "category": "camilan" },
-    { "name": "Wedang Jahe", "desc": "Minuman hangat pengusir dingin", "price": 4000, "img": "http://localhost/wedang_jahe.jpg", "category": "minuman" },
-    { "name": "Tempe Mendoan", "desc": "Tempe goreng tipis khas Banyumas", "price": 3000, "img": "http://localhost/tempe_mendoan.jpg", "category": "camilan" },
-    { "name": "Kopi Hitam", "desc": "Kopi tubruk hangat menemani malam", "price": 4000, "img": "", "category": "minuman" },
-    { "name": "Nasi Bandeng", "desc": "Nasi kucing isi ikan bandeng", "price": 6000, "img": "", "category": "makanan" }
-]   

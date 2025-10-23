@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1, user-scalable=0,width=device-width, initial-scale=1.0">
+    <title>Login - Angkringan Gen-Z</title>
+    <script src="/public/libs/tailwind.js"></script>
+    <link href="/public/libs/font-poppins.css" rel="stylesheet"/>
+    <style>body{font-family:'Poppins';}</style>
+</head>
+<body class="flex flex-col justify-center items-center m-0 h-svh w-full select-none">
+  <div id="server" class="hidden"><%=server%></div>
+    <div id="warning" class="hidden opacity-0 transition w-[300px] px-4 h-30px bg-red-300 py-3 rounded-lg flex justify-center items-center border border-red-700 text-red-700 absolute top-10">asdf</div>
+    <div>
+        <form id="reg-form" class="flex flex-col gap-10">
+            <div class="flex flex-col">
+                <p class="text-center mb-3">Atas Nama</p>
+                <input class="w-[300px] px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 border-gray-500" type="text" name="pelanggan" id="pelanggan" placeholder="Masukkan nama anda...">
+            </div>
+            <div>
+                <p class="mb-3 text-center">Nomor Meja</p>
+                <div class="flex flex-wrap gap-4 w-[300px]" id="tables">
+                    <!-- tables -->
+                </div>
+            </div>
+            <button type="submit" class="bg-orange-500 text-white py-3 rounded-lg">Masuk</button>
+        </form>
+
+    </div>
+
+
+    
+    <script>
+        function $id(id){return document.getElementById(id)}
+        const server = "192.168.1.83";
+        // const server = $id("server").textContent;
+        console.log(server)
+
+        function renderTable(data) {
+            data.forEach(table => {
+                const label = document.createElement('label')
+                label.innerHTML = `
+                    <input class="hidden peer" ${!table.status ? "disabled":""} type="radio" name="meja" id="meja" value="${table.id}">
+                    <div class="peer-checked:border-orange-400 peer-checked:bg-orange-100 peer-checked:text-orange-400 border ${table.status?"border-gray-500 text-gray-800":"border-gray-300 text-gray-200"} transition flex justify-center items-center w-15 h-15 rounded-lg">${table.id}</div>
+                `;
+                $id("tables").appendChild(label);
+            });
+        }
+        function warning(msg){
+            const warn = $id("warning");
+            warn.textContent = msg;
+            warn.classList.add("hidden");
+            warn.classList.remove("hidden");
+            timeout = setTimeout(()=> {
+                warn.classList.remove("opacity-0");
+                setTimeout(()=> {
+                    warn.classList.add("opacity-0");
+                    setTimeout(()=> {
+                        warn.classList.add("hidden");
+                    }, 200);
+                }, 3000);
+            },200);
+        }
+        fetch(`/api/meja`, {method:'POST', headers: {'Content-Type': 'application/json'}})
+        .then(req => req.json())
+        .then(data => renderTable(data));
+
+        const form = $id("reg-form")
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            if(!formData.get("pelanggan") || !formData.get("meja")){warning("masukan nama dan nomor meja");}
+            else {
+                const nama = formData.get('pelanggan');
+                const meja = formData.get('meja');
+                const request = await fetch(`/api/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type':'application/json'
+                    },
+                    body: JSON.stringify({nama, meja})
+                });
+                const result = request.json();
+                if(result){
+                    document.location.href = `/menu`;
+                } else {
+                    warning("terjadi masalah");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
