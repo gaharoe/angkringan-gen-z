@@ -5,8 +5,6 @@ let cart = [];
 function $id(id) {return document.getElementById(id)}
 function $class(className) {return document.getElementsByClassName(className)}
 
-const server = $id("server").textContent;
-
 const menuGrid = $id("menu-grid");
 const searchInput = $id("search-input");
 const cartBtn = $id("cart-btn");

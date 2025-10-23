@@ -3,18 +3,8 @@ const fs = require("fs");
 const cors = require("cors");
 const app = express();
 const http = require("http").createServer(app);
-const ejsLayout = require("express-ejs-layouts");
 const cookieParser = require("cookie-parser");
-const auth = require("./utils/auth")
-const os = require("os");
-
-function getLocalIP(){
-  const nets = os.networkInterfaces()['Wi-Fi'].filter(obj => obj.family == "IPv4")[0];
-  return nets.cidr.split("/")[0];
-}
-
-
-
+const auth = require("./utils/auth");
 
 app.use(cookieParser());
 app.use(cors());
@@ -23,7 +13,6 @@ app.use("/public",express.static(__dirname+"/public"));
 app.use(express.json());
 app.set('view engine', 'ejs');
 
-let serverIp = getLocalIP();
 let menu = JSON.parse(fs.readFileSync("./data/menus.json"));
 let tables = JSON.parse(fs.readFileSync("./data/meja.json"));
 let customer = JSON.parse(fs.readFileSync("./data/customer.json"));
@@ -76,7 +65,7 @@ app.get("/api/menus", (req, res) => {
 });
 
 app.get("/login", (req,res) => {
-  res.render("login",{server: serverIp});
+  res.render("login");
 });
 
 app.get("/", (req, res) => {
@@ -84,7 +73,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/menu", auth.confirm, (req, res) => {
-  res.render("menu", {data: req.user, server: serverIp});
+  res.render("menu", {data: req.user});
 });
 
 app.get("/order", auth.confirm, (req, res) => {
